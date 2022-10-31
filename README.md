@@ -22,7 +22,7 @@ on:
   some_event:
 jobs:
   callReusableWorkflow:
-    uses: loft-br/public-workflows/example/workflow.yaml@main
+    uses: loft-br/public-workflows/.github/workflows/my-reusable-workflow.yaml@main
 ```
 
 ## License
