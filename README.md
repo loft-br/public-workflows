@@ -7,3 +7,7 @@ Store loft-br reusable workflows, which should be public to work. Check GitHub d
 ## Use Cases
 
 Use this repository to store large workflows intended for reuse inside [loft-br](https://github.com/loft-br). These files will be available to the public, therefore should be revised before commited to the repo.
+
+## License
+
+All files stored here is licensed under [The Unlicensed](https://github.com/loft-br/public-workflows/blob/main/LICENSE), therefore don't store your workflow here if there is any trouble in it being copied, modified, published, used, etc.
