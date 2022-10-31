@@ -1,0 +1,51 @@
+name: Preview
+
+on:
+  workflow_call:
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      modified: ${{ steps.differ.outputs.modified }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Checkout Cloudify Repository
+        uses: actions/checkout@v3
+        with:
+          repository: loft-br/cloudify
+          token: ${{ secrets.GIT_HUB_TOKEN }}
+          path: cloudify
+
+      - id: differ
+        uses: ./cloudify/actions/differ
+
+  preview:
+    needs: [setup]
+    runs-on: ubuntu-latest
+    if: ${{ needs.setup.outputs.modified != '[]' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        value: ${{ fromJson(needs.setup.outputs.modified) }}
+    permissions:
+      id-token: write
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Checkout Cloudify Repository
+        uses: actions/checkout@v3
+        with:
+          repository: loft-br/cloudify
+          token: ${{ secrets.GIT_HUB_TOKEN }}
+          path: cloudify
+
+      - name: Cloudify Preview
+        uses: ./cloudify/actions/preview
+        with:
+          filepath: ${{ matrix.value }}
+          cloudify-token: ${{ secrets.CLOUDIFY_TOKEN }}
+          github-token: ${{ secrets.GIT_HUB_TOKEN }}
