@@ -1,8 +1,8 @@
 # Public Workflows
 
-Store loft-br reusable workflows. Check GitHub documentation for this feature: [Reusable Workflows](https://docs.github.com/en/actions/using-workflows/reusing-workflows).
-
 **This repository is intentionally public.** Use it with caution.
+
+Store loft-br reusable workflows. Check GitHub documentation for this feature: [Reusable Workflows](https://docs.github.com/en/actions/using-workflows/reusing-workflows).
 
 ## Use Cases
 
