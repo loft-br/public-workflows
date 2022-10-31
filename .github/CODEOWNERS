@@ -1,5 +1,10 @@
-# More in https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners
+# Documentation https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners
 
-LICENSE                                 @loft-br/squad-devtools
-README.md                               @loft-br/squad-devtools
-/.github/workflows/cloudify*            @loft-br/squad-devtools
+
+# Repository Ownership
+*                                        @loft-br/squad-devtools
+!/.github/workflows/                     @loft-br/squad-devtools
+
+
+# Workflows Ownership
+/.github/workflows/cloudify-*.yaml       @loft-br/squad-devtools
