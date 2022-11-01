@@ -2,7 +2,7 @@
 
 **This repository is intentionally public.** Use it with caution.
 
-Store loft-br reusable workflows. Check GitHub documentation for this feature: [Reusable Workflows](https://docs.github.com/en/actions/using-workflows/reusing-workflows).
+Store loft-br reusable workflows here. Check GitHub documentation for this feature: [Reusable Workflows](https://docs.github.com/en/actions/using-workflows/reusing-workflows).
 
 ## Use Cases
 
@@ -10,11 +10,11 @@ Check [the documentation](https://docs.github.com/en/actions/using-workflows/reu
 
 ### For workflows maintainers
 
-Use this repository to store large workflows intended for reuse inside [loft-br](https://github.com/loft-br). The files will be available to the public, therefore should be revised before commited to the repo.
+Use this repository to store large workflows intended for reuse inside [loft-br](https://github.com/loft-br). The files will be publicly available, therefore should be revised before commited to the repo.
 
 ### For workflows consumers
 
-Call a reusable workflow from your repository by using the `uses` keyword in your workflow file. For example, to use the `loft-br/reusable-workflows` repository's `main.yml` workflow file, use the following syntax:
+Call a reusable workflow from your repository with the `uses` keyword at the job level. Check the syntax to use the `loft-br/public-workflows` repository's `my-reusable-workflow.yaml`:
 
 ```yaml
 # .github/workflows/your-workflow-in-your-repository.yml
@@ -27,4 +27,4 @@ jobs:
 
 ## License
 
-All files stored here is licensed under [The Unlicensed](https://github.com/loft-br/public-workflows/blob/main/LICENSE), therefore don't store your workflow here if there is any trouble in it being copied, modified, published, used, etc.
+All files stored here are licensed under [The Unlicensed](https://github.com/loft-br/public-workflows/blob/main/LICENSE). Therefore, you shouldn't store here anything that can't be copied, modified, published, used even or sold by someone else.
