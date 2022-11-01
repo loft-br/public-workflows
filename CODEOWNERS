@@ -2,8 +2,9 @@
 
 
 # Repository Ownership
-*                                        @loft-br/squad-devtools
-!/.github/workflows/                     @loft-br/squad-devtools
+LICENSE                                  @loft-br/squad-devtools
+README.md                                @loft-br/squad-devtools
+CODEOWNERS                               @loft-br/squad-devtools
 
 
 # Workflows Ownership
