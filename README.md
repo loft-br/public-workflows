@@ -27,4 +27,4 @@ jobs:
 
 ## License
 
-All files stored here are licensed under [The Unlicensed](https://github.com/loft-br/public-workflows/blob/main/LICENSE). Therefore, you shouldn't store here anything that can't be copied, modified, published, used even or sold by someone else.
+All files stored here are licensed under [The Unlicensed](https://github.com/loft-br/public-workflows/blob/main/LICENSE). Therefore, you shouldn't store here anything that can't be copied, modified, published, used or even sold by someone else.
