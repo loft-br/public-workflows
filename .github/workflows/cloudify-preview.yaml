@@ -2,6 +2,12 @@ name: Preview
 
 on:
   workflow_call:
+    inputs:
+      ref:
+        description: 'Cloudify ref to checkout.'
+        required: false
+        type: string
+        default: main
 
 jobs:
   setup:
@@ -17,6 +23,7 @@ jobs:
           repository: loft-br/cloudify
           token: ${{ secrets.GIT_HUB_TOKEN }}
           path: cloudify
+          ref: ${{ inputs.ref }}
 
       - id: differ
         uses: ./cloudify/actions/differ
@@ -42,6 +49,7 @@ jobs:
           repository: loft-br/cloudify
           token: ${{ secrets.GIT_HUB_TOKEN }}
           path: cloudify
+          ref: ${{ inputs.ref }}
 
       - name: Cloudify Preview
         uses: ./cloudify/actions/preview
