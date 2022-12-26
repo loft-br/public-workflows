@@ -1,0 +1,37 @@
+name: 'Hammer V2 reusable workflow created only for retro compatibility with Forge'
+
+on:
+  workflow_call:
+    inputs:
+      hammerRef:
+        description: 'Hammer Ref to Download'
+        required: false
+        type: string
+
+concurrency:
+  group: forge-${{ github.ref }}
+
+jobs:
+  CD:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout loft-br/actions
+        uses: actions/checkout@v3
+        with:
+          repository: loft-br/actions
+          ref: main
+          token: ${{ secrets.GIT_HUB_TOKEN }}
+          path: .github/actions/loft
+
+      - name: Hammer deploy
+        uses: ./.github/actions/loft/forge/hammer
+        with:
+          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          AWS_ACCESS_KEY_FORGE_PRODUCTION_ID: ${{ secrets.AWS_ACCESS_KEY_FORGE_PRODUCTION_ID }}
+          AWS_SECRET_ACCESS_FORGE_PRODUCTION_KEY: ${{ secrets.AWS_SECRET_ACCESS_FORGE_PRODUCTION_KEY }}
+          AWS_ACCESS_KEY_FORGE_SANDBOX_ID: ${{ secrets.AWS_ACCESS_KEY_FORGE_SANDBOX_ID }}
+          AWS_SECRET_ACCESS_FORGE_SANDBOX_KEY: ${{ secrets.AWS_SECRET_ACCESS_FORGE_SANDBOX_KEY }}
+          AWS_ACCESS_KEY_FORGE_STAGING_ID: ${{ secrets.AWS_ACCESS_KEY_FORGE_STAGING_ID }}
+          AWS_SECRET_ACCESS_FORGE_STAGING_KEY: ${{ secrets.AWS_SECRET_ACCESS_FORGE_STAGING_KEY }}
+          hammerRef: ${{ inputs.hammerRef }}

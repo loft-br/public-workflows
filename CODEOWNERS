@@ -9,3 +9,4 @@ CODEOWNERS                               @loft-br/squad-devtools
 
 # Workflows Ownership
 /.github/workflows/cloudify-*.yaml       @loft-br/squad-devtools
+/.github/workflows/hammer.yaml       @loft-br/squad-devtools
